@@ -948,7 +948,7 @@ function getSelectedIcon(selectedIcon){
 
    
     if(selectedIcon == '1'){
-        return 'local_dining';
+        return 'cake';
     }
 
     if(selectedIcon == '2'){
