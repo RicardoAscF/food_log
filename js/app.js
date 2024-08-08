@@ -194,7 +194,7 @@ datePick.addEventListener('change', (evt) =>{
             async function getTask(){
             console.log('get task');
                 
-                const querySnapshotCompleted = await getDocs(collection(dbGet, "completedTasks"));
+                const querySnapshotCompleted = await getDocs(collection(dbGet, "completedFood"));
                 querySnapshotCompleted.forEach((doc) => {
                     let objTasks2 = {
                         id:             doc.id,
@@ -224,7 +224,7 @@ datePick.addEventListener('change', (evt) =>{
 
                 
                 
-                await deleteDoc(doc(dbGet, "gastos", idTask));
+                await deleteDoc(doc(dbGet, "food", idTask));
                 insertCompletedTasksDB(taskName, exp, selectedIcon, date, dateFinshed);
                 //insertCompletedTasksDB*();
 
@@ -249,7 +249,7 @@ datePick.addEventListener('change', (evt) =>{
 
             async function taskCanceled(evt){
                 let idTask = evt.target.id;
-                await deleteDoc(doc(dbGet, "gastos", idTask));
+                await deleteDoc(doc(dbGet, "food", idTask));
 
                 displayToast('Canceling');
 
@@ -262,7 +262,7 @@ datePick.addEventListener('change', (evt) =>{
 
             async function completedTaskCanceled(evt){
                 let idTask = evt.target.id;
-                await deleteDoc(doc(dbGet, "completedTasks", idTask));
+                await deleteDoc(doc(dbGet, "completedFood", idTask));
 
                 displayToast('Canceling');
 
@@ -296,7 +296,7 @@ datePick.addEventListener('change', (evt) =>{
 
 
             async function insertDB(id,taskName,exp,selectedIcon){
-                db.collection("gastos").add({
+                db.collection("food").add({
                     id: id,
                     gasto: taskName,
                     precio: exp,
@@ -332,7 +332,7 @@ datePick.addEventListener('change', (evt) =>{
 
             async function insertCompletedTasksDB(taskName,exp,selectedIcon,date,dateFinished){
             
-                db.collection("completedTasks").add({
+                db.collection("completedFood").add({
                     taskName: taskName,
                     exp: exp,
                     selectedIcon, selectedIcon,
@@ -348,7 +348,7 @@ datePick.addEventListener('change', (evt) =>{
             }
 
             //Obtiene Task to do
-            const querySnapshot = await getDocs(collection(dbGet, "gastos"));
+            const querySnapshot = await getDocs(collection(dbGet, "food"));
                 querySnapshot.forEach((doc) => {
                         let objTasks = {
                             id:             doc.id,
