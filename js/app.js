@@ -948,30 +948,30 @@ function getSelectedIcon(selectedIcon){
 
    
     if(selectedIcon == '1'){
-        return 'cake';
+        return 'favorite';
     }
 
     if(selectedIcon == '2'){
-        return 'local_pizza';
+        return 'block';
     }
 
 
     if(selectedIcon == '3'){
-        return 'store';//exercise  
+        return 'block';//exercise  
     }
 
 
     if(selectedIcon == '4'){
-        return 'credit_card';//Havin fun
+        return 'favorite';//Havin fun
     }
 
     
     if(selectedIcon == '5'){
-        return 'shopping_cart';
+        return 'block';
     }
 
     if(selectedIcon == '6'){ //personal projectas
-        return 'local_laundry_service';
+        return 'block';
     }
 
 
